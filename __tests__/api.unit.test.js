@@ -13,12 +13,4 @@ describe('fetchPokemon tests', () => {
     expect(pokemon.weight).toEqual(545);
     expect(pokemon.types).toEqual(['psychic', 'fairy']);
   });
-  test('fetchPokemon succesffuly GETs the data at the correct URL', async () => {
-    const data = await fetchPokemon('mr-mime');
-    expect(data.name).toEqual('mr-mime');
-  });
-  test('fetchPokemon succesffuly GETs the data at the correct URL', async () => {
-    const data = await fetchPokemon('mr-mime');
-    expect(data.name).toEqual('mr-mime');
-  });
 });
