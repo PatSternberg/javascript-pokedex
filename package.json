@@ -1,0 +1,15 @@
+{
+  "name": "javascript_challenges_pokedex",
+  "version": "1.0.0",
+  "description": "We're going to use the publicly available Pokémon API to create a Pokédex app, where we can store a list of Pokémon we have caught, in our quest to be the very best, like no one ever was.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
