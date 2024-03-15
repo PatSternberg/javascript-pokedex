@@ -22,16 +22,20 @@ describe('Pokedex class tests', () => {
     expect(pokedex.all()).toEqual([]);
   });
   test('Pokedex.catch adds an entry to the Pokedex', () => {
-    const pokedex = new Pokedex();
-    const testPokemon = {
+    // Set up mockPokemon object and mock for fetchPokemon function
+    const mockPokemon = {
       name: 'mr-mime',
       id: 10,
       height: 100,
       weight: 50,
-      types: ['psychic'] };
-    const mockPokemonAPI = () => { fetchPokemon() };
-    mockPokemonAPI(() => {return testPokemon});
-    pokedex.catch(mockPokemonAPI);
-    expect(pokedex.contents).toEqual([testPokemon]);
+      types: ['psychic']
+    };
+    fetchPokemon.mockResolvedValueOnce(mockPokemon);
+
+    const pokedex = new Pokedex();
+    return pokedex.catch('mr-mime').then(() => {
+      expect(pokedex.contents).toEqual([mockPokemon]);
+      expect(pokedex.contents[0]['id']).toEqual(10);
+    });
   });
 });

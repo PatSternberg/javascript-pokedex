@@ -17,8 +17,10 @@ class Pokedex {
   };
 
   catch(pokemon_name) {
-    fetchPokemon(pokemon_name);
-    this.contents.push(pokemon_name);
+    return fetchPokemon(pokemon_name)
+      .then((pokemon) => {
+        this.contents.push(pokemon);
+      });
   };
 
 };
